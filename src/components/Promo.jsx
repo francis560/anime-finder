@@ -7,6 +7,8 @@ const Promo = ({id}) => {
 
     useEffect(() => {
         Axios.get(`https://api.jikan.moe/v3/anime/${id}/videos`).then(res => setPromoVideo(res.data.promo)).catch(err => console.error(err));
+    
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const [promoVideo, setPromoVideo] = useState([]);

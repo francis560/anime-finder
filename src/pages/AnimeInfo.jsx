@@ -11,13 +11,16 @@ import Promo from "../components/Promo";
 
 const AnimeInfo = () => {
 
+    let { id } = useParams();
+    
     useEffect(() => {
         Axios.get(`https://api.jikan.moe/v3/anime/${id}`).then(res => setAnimeInfo(res.data)).catch(err => console.error(err));
+        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const [animeInfo, setAnimeInfo] = useState({studios: [], genres: [], demographics: [], themes: [], aired: []});
 
-    let { id } = useParams();
 
     return (
         <div>
