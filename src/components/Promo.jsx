@@ -25,7 +25,27 @@ const Promo = ({id}) => {
         centerPadding: "25px",
         lazyLoad: "ondemand",
         slidesToShow: slideCount,
-        speed: 500
+        dots: false,
+        speed: 500,
+        responsive: [
+            {
+              breakpoint: 700,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerPadding: "0px"
+              }
+            },
+            {
+              breakpoint: 800,
+              settings: {
+                slidesToShow: slideCount,
+                slidesToScroll: slideCount,
+                centerPadding: "0px",
+                initialSlide: slideCount
+              }
+            }
+        ]
     };
 
     return (
@@ -46,8 +66,8 @@ const Promo = ({id}) => {
                             
                             {
                                 promoVideo.map((data, key) => 
-                                    <div key={key}>
-                                        <iframe title={data.title} className="mx-auto rounded-md w-96 h-64" src={data.video_url}></iframe>
+                                    <div key={key} className="sm:p-2">
+                                        <iframe title={data.title} className="mx-auto rounded-md w-full h-64" src={data.video_url}></iframe>
                                     </div>
                                 )
                             }
