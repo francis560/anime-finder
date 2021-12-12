@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 
 
+import Logo from "./Logo";
+
+
 const Navbar = () => {
     return (
         <Fragment>
@@ -12,7 +15,7 @@ const Navbar = () => {
                         
                         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                             <div className="mx-auto flex-shrink-0 flex items-center">
-                                <img className="block lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+                                <Logo />
                             </div>
                         </div>
 
