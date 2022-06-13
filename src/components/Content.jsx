@@ -45,10 +45,21 @@ const Content = () => {
                     
                     {
                         animeList.map((data, key) => 
-                            <div key={key} className="w-2/5 px-4 py-5 sm:w-3/12 lg:w-1/6 m-3 text-center rounded-md border-2 border-gray-200">
+                            <div
+                                key={key}
+                                className="w-2/5 px-4 py-5 sm:w-3/12 lg:w-1/6 m-3 text-center rounded-md border-2 border-gray-200"
+                                style={{ minHeight: '350px' }}>
                                 <div className="">
-                                    <img loading="lazy" className="mx-auto w-3/4 rounded-md" src={data.image_url} alt="Portada" />
-                                    <p className="line-clamp my-5 font-medium text-gray-700">{data.title}</p>
+                                    <Link to={`/anime/${data.mal_id}`}>
+                                        <div  style={{ minHeight: '190px', display: 'flex', alignItems:'center', justifyContent:'center' }}>
+                                            <img
+                                            loading="lazy"
+                                            className="mx-auto w-3/4 rounded-md"
+                                            src={data.image_url}
+                                            alt={`Portada ${data.title}`} />
+                                        </div>
+                                    </Link>
+                                    <p className="line-clamp my-5 font-medium text-gray-700" style={{minHeight:"50px style={{ minHeight: '190px' }}"}}>{data.title}</p>
                                     <Link to={`/anime/${data.mal_id}`} className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:opacity-80 font-medium py-2 px-10 rounded-md text-white">View</Link>
                                 </div>
                             </div>

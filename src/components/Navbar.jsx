@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-
+import { Link } from "react-router-dom";
 
 import Logo from "./Logo";
 
@@ -14,9 +14,9 @@ const Navbar = () => {
                     <div className="relative flex items-center justify-between h-16">
                         
                         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                            <div className="mx-auto flex-shrink-0 flex items-center">
+                            <Link to="/" className="mx-auto flex-shrink-0 flex items-center">
                                 <Logo />
-                            </div>
+                            </Link>
                         </div>
 
                     </div>
