@@ -59,7 +59,7 @@ const Content = () => {
                                             alt={`Portada ${data.title}`} />
                                         </div>
                                     </Link>
-                                    <p className="line-clamp my-5 font-medium text-gray-700" style={{minHeight:"50px style={{ minHeight: '190px' }}"}}>{data.title}</p>
+                                    <p className="line-clamp my-5 font-medium text-gray-700" style={{minHeight:"50px"}}>{data.title}</p>
                                     <Link to={`/anime/${data.mal_id}`} className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:opacity-80 font-medium py-2 px-10 rounded-md text-white">View</Link>
                                 </div>
                             </div>
