@@ -45,11 +45,10 @@ const Info = ({animeInfo}) => {
             </div>
             
             <div className="flex md:flex-row flex-col mt-5">
-                
                 <div className="flex md:mx-0 md:mb-0 mx-auto mb-4 md:mr-4">
                     <p className="text-white font-bold my-auto mr-2">Score:</p>
 
-                    <p className="text-gray-50 bg-gray-800 py-1 px-2 mr-1 rounded-md font-medium">{animeInfo.score}</p>
+                    <p className="text-gray-50 bg-gray-800 py-1 px-2 mr-1 rounded-md font-medium">{animeInfo.score || 'not score, yet'}</p>
                 </div>
 
                 <div className="flex md:mx-0 mx-auto">
@@ -57,7 +56,6 @@ const Info = ({animeInfo}) => {
 
                     <p className="text-gray-50 bg-gray-800 py-1 px-2 mr-1 rounded-md font-medium">{animeInfo.aired.string}</p>
                 </div>
-                
             </div>
             
             <div className="flex mt-10">
