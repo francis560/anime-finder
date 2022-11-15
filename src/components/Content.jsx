@@ -9,18 +9,18 @@ import Spinner from "./Spinner";
 const Content = () => {
 
     useEffect(() => {
-        Axios.get("https://api.jikan.moe/v3/top/anime/1/upcoming").then(res => {
-            setLoading(false);
+        Axios.get("https://api.jikan.moe/v4/top/anime").then(res => {
             setAnimeList(res.data.top);
+            setLoading(false);
         }).catch(err => console.error(err));
     }, []);
 
     const animeSearch = (event) => {
         if (event.key === "Enter") {
             setLoading(true);
-            Axios.get(`https://api.jikan.moe/v3/search/anime?q=${animeName}`).then(res => {
-                setLoading(false);
+            Axios.get(`https://api.jikan.moe/v4/anime?q=${animeName}`).then(res => {
                 setAnimeList(res.data.results);
+                setLoading(false);
             }).catch(err => console.error(err));
         }
     }
